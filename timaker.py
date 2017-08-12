@@ -48,3 +48,7 @@ class TiMaker():
         self.read_df()
         self.feature_maker()
         self.make_final_data()
+
+    def save_df(self):
+        """save the df as a csv"""
+        self.stockdf.to_csv('new_data.csv')

@@ -11,7 +11,7 @@ def main():
     ti = TiMaker(path)
     ti.run_all()
     print(ti.final_data.head())
-
+    ti.save_df()
 
 
 
