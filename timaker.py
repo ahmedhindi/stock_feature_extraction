@@ -10,7 +10,7 @@ class TiMaker():
         path: the path of the csv file containing stock data.
         """
         self.features = {
-        "Stocastic":['kdjd_5','kdjk_3','kdjk_3'],
+        "Stocastic":['kdjd_5','kdjk_3'],
         "RSI":['rsi_14'],
         "ADX":['adx_15_ema'],
         "MACD":['macd', 'macds', 'macdh'],

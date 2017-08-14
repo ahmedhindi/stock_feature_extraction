@@ -1,0 +1,14 @@
+"Stocastic":['kdjd_5','kdjk_3','kdjk_3'],
+"RSI":['rsi_14'],
+"ADX":['adx_15_ema'],
+"MACD":['macd', 'macds', 'macdh'],
+"BBands":['boll', 'boll_ub', 'boll_lb'],
+"ATR":['atr'],
+
+all added columns starts with the indicator name etc(MACD_.....) since some Indicators
+have more that one time series to be calculated, the part after that "_" is used.
+
+example.
+BBands_boll    -> middle band.
+      _boll_ub -> upper band
+      _boll_lb -> lower band
