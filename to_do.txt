@@ -1,0 +1,29 @@
+## this is how to inject a variable in the name space
+x='buffalo'
+exec("{} = {}".formate(x,2))
+
+------------------------
+
+## this is how to save images in matplotlib
+savefig('foo.png')
+
+--------------------------
+
+
+
+this is how to try to import and if not there it'll install using pip
+
+
+import pip
+
+def import_or_install(package):
+    try:
+        __import__(package)
+    except ImportError:
+        pip.main(['install', package])
+
+-------------------------------
+
+### many plots woth shared x axis
+
+f, [Stocastic, macd, RSI, ADX, BBands, ATR] = plt.subplots(6, sharex=True)

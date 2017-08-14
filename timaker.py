@@ -24,7 +24,7 @@ class TiMaker():
 
     def read_df(self):
         """Read csv stock data and convert it to stock data frame."""
-        self.stockdf = Sdf.retype(pd.read_csv(self.path))
+        self.stockdf = Sdf.retype(pd.read_csv('data/input/'+self.path))
         self.col_names = list(self.stockdf.columns)
 
     def feature_maker(self):
@@ -51,4 +51,4 @@ class TiMaker():
 
     def save_df(self):
         """save the df as a csv"""
-        self.stockdf.to_csv('new_data.csv')
+        self.final_data.to_csv('data/output/new_{}'.format(self.path))

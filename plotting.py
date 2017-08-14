@@ -21,7 +21,6 @@ class IndicatorPlotter:
         df.run_all()
         self.features = df.features
         self.to_plot = self.features.keys()
-
         self.df = df.final_data
 
 
@@ -38,10 +37,32 @@ class IndicatorPlotter:
             else:
                 tp = self.df[self.contains('macd')]
                 tp.drop(self.contains('macdh')[0], axis=1).plot()
-                tp[self.contains('macdh')[0]].plot(kind='bar'
+                tp[self.contains('macdh')[0]].plot(kind='bar')
                 plt.show()
+
+
+
+    def plot_all(self):
+        list_of_tis = list(self.features.keys())
+        f,  ax = plt.subplots(len(list_of_tis), sharex=True)
+
+        for ax, ti in enumerate(list_of_tis):
+            if ti != 'MACD':
+                tp = self.df[self.contains(ti)]
+                tp.plt(ax=ax[i])
+
+            elif ti == 'MACD':
+                tp = self.df[self.contains('MACD')]
+                tp.drop(self.contains('macdh')[0], axis=1).plot(ax=ax[i])
+                tp[self.contains('macdh')[0]].plot(kind='bar', ax=ax[i])
+
+            finally:
+                plt.show()
+
+
 
 sample = IndicatorPlotter('data.csv')
 sample.get_df()
 sample.to_plot = 'macd'
 sample.plotter()
+list(sample.features.keys())
