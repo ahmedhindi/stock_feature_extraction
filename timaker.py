@@ -15,8 +15,7 @@ class TiMaker():
         "ADX":['adx_15_ema'],
         "MACD":['macd', 'macds', 'macdh'],
         "BBands":['boll', 'boll_ub', 'boll_lb'],
-        "ATR":['atr'],
-        }
+        "ATR":['atr'],}
         self.path = path
         self.stockdf = None
         self.col_names = None
