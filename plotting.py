@@ -31,9 +31,9 @@ class IndicatorPlotter:
         plt.figure(figsize=(15,6))
         for i in self.to_plot:
             if 'macd' not in self.to_plot:
-                 tp = self.df[self.contains()]
-                 tp.plt()
-                 plt.show()
+                tp = self.df[self.contains()]
+                tp.plt()
+                plt.show()
             else:
                 tp = self.df[self.contains('macd')]
                 tp.drop(self.contains('macdh')[0], axis=1).plot()
