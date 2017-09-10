@@ -1,11 +1,15 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.finance import candlestick2_ohlc
+%matplotlib inline
 
 class SdZones:
     def __init__(self, data):
         self.data  = data
 
     def up_or_down(self):
+        """this column will be true if the candle is up """
         self.data['up_down'] = np.where(self.data['Open'] > self.data['Close'], True, False)
 
     def body(self):
@@ -31,23 +35,28 @@ class SdZones:
         self.spread()
         self.is_exciting_candle()
         self.clean()
+
+
+
 """
-first determine all arias the have interesting boring interesting pattern
-ignore all areas that the price broke into after the date
-of occurrence make sure to have the data for the
-open high close low for all the boring candles area so you can make the vis
+first determine all arias the have interesting boring interesting pattern ignore
+all areas that the price broke into after the date of occurrence make sure to
+have the data for the open high close low for all the boring candles area
+so you can make the vis
 """
 
 
 
 
-data = pd.read_csv('data/input/AAPL.csv')
 
-
-
+data = pd.read_csv('data/input/AAPL.csv').tail(70)
 sample =  SdZones(data=data)
-sample.data.head()
+sample.run_all()
+data = sample.data
+def plot_boring_and_intersting(data):
+    data.index = np.arange(data.shape[0])
+    fig, ax = plt.subplots(figsize=(32,12))
+    candlestick2_ohlc(ax,data['Open'],data['High'],data['Low'],data['Close'],width=0.6)
+    plt.vlines(data.index[data['is_exciting']], data.Close.min(), data.Close.max(), alpha=0.2, colors='g')
 
-sample.exciting_candle()
-sample.boring_candle()
-sample.data.head(20)
+plot_boring_and_intersting(data)
