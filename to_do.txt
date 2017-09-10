@@ -1,18 +1,69 @@
-pattern_name, vis_makes_sense, code_maches_formula
-bearish_engulfing,
-bearish_harami,
-bearish_kicker,
-bullish_engulfing,
-bullish_harami,
-bullish_kicker,
-dark_cloud,
-doji,
-doji_and_near_doji,
-doji_yesterday,
-evening_star,
-hammer,
-hanging_man,
-inverted_hammer,
-morning_star,
-pricing_line,
-shooting_star,
+To quantify a zone we require 3 elements
+1. LEG-OUT
+2. BASE
+3. LEG-IN
+
+Legs: Imply Price Moving (Explosive Moves) Exciting Candles
+Base: Imply Price not moving (Non Explosive Moves) Boring Candles
+
+Candlestick composition
+
+Distance from the Open – Close Body of the candle
+Distance from the High – Low Range of the candle
+
+Exciting Candle:
+Body of the candle > 50% Range of the candle
+(Open – Close) > 50% (High – Low)
+
+Boring Candle
+Body of the candle <=50% Range of the candle
+(Open – Close) <= 50% (High – Low)
+
+Some Important points:
+Demand Zones will always have “LEGOUTS” that move “UP”
+Supply Zones will always have “LEGOUTS” that move “DOWN”
+
+
+  _________________________________________________
+//| Term   |Definition                             |\\
+||| _______|_______________________________________|||
+||| Leg-in | Price action previous to base         |||
+|||        | It should be made of exciting candles |||
+|||        | It can be Rally or Drop               |||
+||| _______|_______________________________________|||
+||| Base   | Found between Leg-in and Leg-out      |||
+|||        | It should be made of boring candles   |||
+|||        | This is wher unfulfilled orders are   |||
+||| _______|_______________________________________|||
+||| Leg-out| Explosive price action after base     |||
+|||        | It should be made of exciting candles |||
+|||        |If it is Rally, it defines demand zone |||
+|||        |If it is Drop, it defines Supply zone  |||
+\\|________|_______________________________________|//
+
+
+CTP Notes
+
+Steps to identify Demand Zones:
+1. Start with the CMP on the chart
+2. Look left and down without cutting through candles to find an explosive move in price
+3. Mark a vertical line on the Leg-out candle (A Leg-Out should be made of one Exciting candle or a series of Exciting candles)
+4. Candle preceding the Leg-out candle needs to be a boring candle (If the candle is an excitingthen we cannot quantify that zone for that particular time frame)
+5. On the Leg-in candle plot a vertical line (Legin should be an exciting candle). Once this is done the base will be completely isolated and go ahead and mark your proximal and distallines.
+6. Use the same steps for identifying a Supply zone. The only difference is in the second step and the difference is that we do not have to look down & left, but we have to look up & left.
+Additional Rules/Exceptions for the 4 patterns (For plotting Distal Line)
+Proximal & Distal line placement for Demand zone
+For DBR
+Proximal Line – Highest body in the base
+Distal Line – Lowest wick of entire formation (DBR)
+For RBR
+Proximal line – Highest body in the base
+Distal Line – Ignore the legin. Lowest wick of base or legout whichever is lower
+
+Proximal & Distal line placement for Supply zone
+For RBD
+Proximal line – Lowest body in the base
+Distal Line – Highest wick of entire formation (RBD)
+For DBD
+Proximal line – Lowest body in the base
+Distal Line –Ignore the legin. Highest wick of base or legout whichever is higher
