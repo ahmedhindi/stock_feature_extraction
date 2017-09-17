@@ -67,3 +67,20 @@ Distal Line – Highest wick of entire formation (RBD)
 For DBD
 Proximal line – Lowest body in the base
 Distal Line –Ignore the legin. Highest wick of base or legout whichever is higher
+
+
+
+############################################
+1) Run the program for the sample dataset I have put in the shared folder earlier. Each input file shall generate three output files (candle patterns, Demand and supply zone, indicators). The original input file shall be retained. three set of output files shall be put in the folder named 'processed' and shall be prefixed (prefix 'C', 'I' and 'SD' for candles, Indicators and Supply demand file.
+
+2) After you run these, please use 'http://chartink.com/' for verifying the outputs. (indicators, candles, and Demand supply zones)
+
+3)  You need to help me running these programs on my machine. I will do the testing at my end as well.
+
+4) The directory needs to be organized (later). Also, add comments in the program for easy understanding
+
+5) in all programs the input file shall be picked up from the directory and directory name should be read from the parameter file.
+
+Lets have a call on both Friday and Saturday.
+
+############################################

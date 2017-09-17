@@ -6,9 +6,9 @@ pd.options.mode.chained_assignment = None
 
 
 class TiMaker():
-    def __init__(self, path):
+    def __init__(self, data):
         """
-        path: the path of the csv file containing stock data.
+        data: the data of the csv file containing stock data.
         """
         self.features = {
         "Stocastic":['kdjd_5','kdjk_3'],
@@ -17,7 +17,7 @@ class TiMaker():
         # "MACD":['macd', 'macds', 'macdh'],
         "BBands":['boll', 'boll_ub', 'boll_lb'],
         "ATR":['atr'],}
-        self.path = path
+        self.data = data
         self.stockdf = None
         self.col_names = None
         self.final_data = None
@@ -37,7 +37,7 @@ class TiMaker():
 
     def read_df(self):
         """Read csv stock data and convert it to stock data frame."""
-        self.stockdf = Sdf.retype(pd.read_csv('data/input/'+self.path))
+        self.stockdf = Sdf.retype(pd.read_csv('data/input/'+self.data))
         self.col_names = list(self.stockdf.columns)
 
     def feature_maker(self):
@@ -69,7 +69,8 @@ class TiMaker():
         self.macd()
         self.feature_maker()
         self.make_final_data()
-        print(self.final_data.shape)
+        return self.final_data
+
     def save_df(self):
         """save the df as a csv"""
-        self.final_data.to_csv('data/output/new_{}'.format(self.path))
+        self.final_data.to_csv('data/output/new_{}'.format(self.data))

@@ -3,45 +3,54 @@ import numpy as np
 import stockstats
 from os import listdir
 from stockstats import StockDataFrame as Sdf
-from timaker import TiMaker
 import sys
 import warnings
-
+#################
+from scripts.candles2 import MakeCandles
+from scripts.strategy import Strategy
+from  scripts.timaker import TiMaker
 pd.options.mode.chained_assignment = None
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
-
-[i for i in listdir("data/input") if i.endswith('.csv')]
-def get_all_json_files():
-    """Return the path + json file name."""
-    all_files = [i for i in listdir("data/input") if i.endswith('.csv')]
-    return all_files, dir_c, dir_s
-
-
 def main():
+    # read all the files in the input file
+    output_file = 'data/output/'
+    input_file = 'data/input/'
+    print("reading the data from the input folder.....")
 
-    arg = sys.argv[1].split("=")[0]
-    if  arg in ['file', 'all']:
-        if arg == 'file':
-            path = sys.argv[1].split("=")[1]
-            make_csvs(path=path)
+    all_files = get_all_csv_files()
 
-        elif arg == 'all':
+    for i in all_files:
+        # run the TI nd stratigy script
+            # save with prefix  I
 
-            for i in [i for i in listdir("data/input") if i.endswith('.csv')]:
-                make_csvs(path=i)
+        ti = TiMaker(i+'.csv')
+        ti_ = ti.run_all()
+        # print(ti.head())
+        # ti_.to_csv(f'{output_file}(T)_{i}.csv')
+        ####################
+        st = Strategy(ti.final_data)
+        st = st.runall()
+        st.to_csv(f'{output_file}(I)_{i}.csv')
+        #####################
+        # run candle
+            # prefix C
+        candles = MakeCandles(i+'.csv')
+        candles.run_all()
+        candles.data.to_csv(f'{output_file}(C)_{i}.csv')
+        # print(candles.data.head())
+        # run supply and demand
+            # prefix SD
 
-    else:
-        print('please enter the right argument file="file name" to work wih one file or or all')
-        print('example~$ python main.py all')
-        print('example~$ python main.py file="apple.csv"')
 
-def make_csvs(path):
-    ti = TiMaker(path)
-    ti.run_all()
-    ti.final_data = ti.final_data.round(3)
-    ti.final_data['stock_name'] = path.split(".")[0]
-    ti.save_df()
+
+def get_all_csv_files():
+    """Return the path + csv file name."""
+    all_files = [i.split('.')[0] for i in listdir("data/input") if i.endswith('.csv')]
+    return all_files
+
+
+
 
 if __name__ == '__main__':
     main()

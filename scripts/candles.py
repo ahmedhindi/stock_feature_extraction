@@ -170,6 +170,6 @@ class CR:
         for i in all_funcs:
             eval('self.{}()'.format(i))
 
-a = CR(name='AAPL.csv')
+"""a = CR(name='AAPL.csv')
 a._read_csvs()
-a.inverted_hammer()
+"""

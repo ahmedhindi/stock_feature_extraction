@@ -1,0 +1,82 @@
+name: talib
+channels:
+- quantopian
+- defaults
+dependencies:
+- certifi=2016.2.28=py35_0
+- mkl=2017.0.3=0
+- numpy=1.11.3=py35_0
+- openssl=1.0.2l=0
+- pip=9.0.1=py35_1
+- python=3.5.4=0
+- readline=6.2=2
+- setuptools=36.4.0=py35_0
+- sqlite=3.13.0=0
+- tk=8.5.18=0
+- wheel=0.29.0=py35_0
+- xz=5.2.3=0
+- zlib=1.2.11=0
+- ta-lib=0.4.9=np111py35_0
+- pip:
+  - asn1crypto==0.22.0
+  - attrs==17.2.0
+  - automat==0.6.0
+  - bleach==2.0.0
+  - cffi==1.10.0
+  - constantly==15.1.0
+  - cryptography==2.0
+  - cssselect==1.0.1
+  - decorator==4.1.1
+  - entrypoints==0.2.3
+  - fuzzywuzzy==0.15.1
+  - html5lib==0.999999999
+  - hyperlink==17.2.1
+  - idna==2.5
+  - incremental==17.5.0
+  - ipykernel==4.6.1
+  - ipython==6.1.0
+  - ipython-genutils==0.2.0
+  - jedi==0.10.2
+  - jinja2==2.9.6
+  - jsonschema==2.6.0
+  - jupyter-client==5.1.0
+  - jupyter-core==4.3.0
+  - jupyterlab==0.25.2
+  - jupyterlab-launcher==0.3.1
+  - lxml==3.8.0
+  - markupsafe==1.0
+  - mistune==0.7.4
+  - nbconvert==5.2.1
+  - nbformat==4.3.0
+  - notebook==5.0.0
+  - pandocfilters==1.4.1
+  - parsel==1.2.0
+  - pexpect==4.2.1
+  - pickleshare==0.7.4
+  - prompt-toolkit==1.0.14
+  - ptyprocess==0.5.2
+  - pyasn1==0.2.3
+  - pyasn1-modules==0.0.9
+  - pycparser==2.18
+  - pydispatcher==2.0.5
+  - pygments==2.2.0
+  - pyopenssl==17.1.0
+  - python-dateutil==2.6.1
+  - pyzmq==16.0.2
+  - queuelib==1.4.2
+  - scrapy==1.4.0
+  - selenium==3.4.3
+  - service-identity==17.0.0
+  - simplegeneric==0.8.1
+  - six==1.10.0
+  - terminado==0.6
+  - testpath==0.3.1
+  - tornado==4.5.1
+  - traitlets==4.3.2
+  - twisted==17.5.0
+  - w3lib==1.17.0
+  - wcwidth==0.1.7
+  - webencodings==0.5.1
+  - zope.interface==4.4.2
+prefix: /home/ahmed/anaconda3/envs/talib
+

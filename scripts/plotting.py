@@ -61,8 +61,9 @@ class IndicatorPlotter:
 
 
 
-sample = IndicatorPlotter('data.csv')
+"""sample = IndicatorPlotter('data.csv')
 sample.get_df()
 sample.to_plot = 'macd'
 sample.plotter()
 list(sample.features.keys())
+"""

@@ -4,14 +4,14 @@ pd.options.mode.chained_assignment = None
 
 
 class Strategy:
+    def __init__(self, data):
+        # self.file = file
+        # self.path = 'data/output/'
+        self.data = data
 
-    def __init__(self, file):
-        self.file = file
-        self.path = 'data/output/'
-
-    def read_csvs(self):
-        """Reads the data with the indicators as columns (from the output file)"""
-        self.data = pd.read_csv(self.path+self.file)
+    # def read_csvs(self):
+    #     """Reads the data with the indicators as columns (from the output file)"""
+    #     self.data = pd.read_csv(self.path+self.file)
 
     def save_data(self):
         """Saves the file in the file strategy"""
@@ -228,13 +228,15 @@ class Strategy:
         """)
 
     def runall(self):
-        self.read_csvs()
+        # self.read_csvs()
         self.stocastic()
         self.rsi()
         self.bbands()
         self.macd()
-        self.save_data()
+        # self.save_data()
+        return self.data
 
-
+"""
 a = Strategy(file='new_AAPL.csv')
 a.usage()
+"""
