@@ -9,4 +9,4 @@ def import_or_install(packages):
         except ImportError:
             pip.main(['install', package])
 
-import_or_install(['pandas', 'numpy', 'stockstats', 'matplotlib'])
+import_or_install(['pandas', 'numpy', 'stockstats', 'matplotlib', ])

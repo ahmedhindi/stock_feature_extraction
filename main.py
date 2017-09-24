@@ -41,6 +41,7 @@ def main():
         # print(candles.data.head())
         # run supply and demand
             # prefix SD
+        print(i)
 
 
 

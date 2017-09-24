@@ -14,6 +14,7 @@ class MakeCandles:
         dfn = self.path + self.name
         self.data = pd.read_csv(dfn, index_col=0)
         self.data.columns = self.data.columns.str.title()
+        self.data[['Open', 'Close', 'High','Low']] = self.data[['Open', 'Close', 'High','Low']].applymap(float)
 
     @staticmethod
     def read_dict():
